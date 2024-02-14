@@ -1,0 +1,68 @@
+h2{
+    margin-top: 50px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+ .delButton{
+    margin: 0 5px;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    padding:6px;
+  }
+
+  .addCategory{
+    margin-top: 10px;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    padding:10px;
+    float: right;
+    margin-right: 10px;
+  }
+
+  .company-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 50px auto auto auto;
+  }
+  
+  .company-form-label {
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+
+  .company-form-label input{
+    border: 1px solid black;
+    border-radius: 5px;
+    display: block;
+    margin-top: 5px;
+  }
+  
+  .company-form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .company-form-button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .company-form-button:hover {
+    background-color: #45a049;
+  }
