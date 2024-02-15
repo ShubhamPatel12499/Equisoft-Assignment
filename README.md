@@ -1,6 +1,6 @@
 <h2>SignUp Page</h2>
 (https://github.com/ShubhamPatel12499/Equisoft-Assignment/assets/98810944/f438d051-0c4d-4c58-8539-87cd651fa026)
-![SignUp Page - creds](https://github.com/ShubhamPatel12499/Equisoft-Assignment/assets/98810944/b26ba50b-fce2-471b-8af1-5dc7f2282cac)
+(https://github.com/ShubhamPatel12499/Equisoft-Assignment/assets/98810944/b26ba50b-fce2-471b-8af1-5dc7f2282cac)
 
 <h2>Login Page</h2>
 ![Login Page](https://github.com/ShubhamPatel12499/Equisoft-Assignment/assets/98810944/df8c73bc-8907-4133-8e96-77211c782606)
