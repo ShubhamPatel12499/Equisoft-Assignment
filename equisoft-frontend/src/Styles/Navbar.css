@@ -17,8 +17,9 @@
   cursor: pointer;
 }
 
-.logout-btn{
+ .logout-btn {
     color: white;
     text-decoration: none;
     cursor: pointer;
+    font-weight: bold;
   }

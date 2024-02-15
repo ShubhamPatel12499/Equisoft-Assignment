@@ -74,7 +74,7 @@ const Company = () => {
   return (
     <div>
       <h2>Companies</h2>
-      <button onClick={() => setShowForm(!showForm)} class="addCategory">Add Category</button>
+      <button onClick={() => setShowForm(!showForm)} class="addCategory">Add Company</button>
       {showForm && (
         <form onSubmit={handleSubmit} class="company-form">
             <h2>Create Company</h2>

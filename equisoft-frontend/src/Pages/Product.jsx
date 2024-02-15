@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 const Product = () => {
   const [products, setProducts] = useState([]);
   const [formData, setFormData] = useState({
-    // id: '',
     productName: '',
     category: '',
     company: '',
@@ -76,32 +75,34 @@ const Product = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // if (formData?.id){
-    //     const response = await fetch(`https://equisoft-c8b72-default-rtdb.firebaseio.com/product/${formData?.id}.json`, {
-    //       method: 'PATCH',
-    //       headers: {
-    //         'Content-Type': 'application/json',
-    //       },
-    //       body: JSON.stringify(formData),
-    //     });
-    //     if(response.ok)
-    //     {
-    //       alert('Product Updated successfully!');
-    //     }
-    // }
-    // else{
     try {
-      const response = await fetch('https://equisoft-c8b72-default-rtdb.firebaseio.com/product.json', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      let response;
+      if (editProduct) {
+        response = await fetch(`https://equisoft-c8b72-default-rtdb.firebaseio.com/product/${editProduct.id}.json`, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+      } else {
+        response = await fetch('https://equisoft-c8b72-default-rtdb.firebaseio.com/product.json', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+      }
       if (response.ok) {
-        alert('Product added successfully!');
+        const updatedProduct = await response.json();
+        if (editProduct) {
+          setProducts(products.map((product) => (product.id === updatedProduct.id ? updatedProduct : product)));
+        } else {
+          setProducts([...products, updatedProduct]);
+        }
+        alert(editProduct ? 'Product updated successfully!' : 'Product added successfully!');
         setFormData({
-          // id:"",
           productName: '',
           category: '',
           company: '',
@@ -110,19 +111,19 @@ const Product = () => {
           qty: '',
           image: '',
         });
+        setEditProduct(null);
+        setShowForm(false);
       } else {
-        alert('Failed to add product!');
+        alert('Failed to add/update product!');
       }
     } catch (error) {
-      console.error('Error adding product:', error);
+      console.error('Error adding/updating product:', error);
     }
-  //  }
   };
-  // console.log(formData,"FormDta");
 
   const handleEdit = (product) => {
 
-    setFormData({ ...product, id: product.id });
+    setFormData({ ...product });
     setEditProduct(product);
     setShowForm(true);
   };
