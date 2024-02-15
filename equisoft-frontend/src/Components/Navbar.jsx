@@ -21,7 +21,7 @@ const Navbar = () => {
     <div className='navbar'>
       {localStorage.getItem('isLoggedIn') &&  (
         <>
-          <Link to={'/'}>Task</Link>
+          <Link to={'/task'}>Task</Link>
           <Link to={'/product'}>Product</Link>
           <Link to={'/categories'}>Categories</Link>
           <Link to={'/company'}>Company</Link>

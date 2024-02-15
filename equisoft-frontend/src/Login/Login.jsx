@@ -15,9 +15,10 @@ const Login = () => {
       await login(email, password);
       alert("Login Succesful")
       localStorage.setItem('isLoggedIn', true);
-      navigate("/");
+      navigate("/task");
     } catch (error) {
       alert("User not Exist")
+      navigate("/signup");
     }
   };
 

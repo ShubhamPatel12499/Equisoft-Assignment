@@ -8,6 +8,7 @@ import Company from '../Pages/Company';
 import Navbar from '../Components/Navbar';
 import ProductDetails from '../Pages/ProductDetails';
 import Task from '../Pages/Task';
+import NotFound from '../Pages/NotFound';
 
 const AllRoutes = ({ isLoggedIn, setIsLoggedIn }) => {
   return (
@@ -16,11 +17,12 @@ const AllRoutes = ({ isLoggedIn, setIsLoggedIn }) => {
       <Routes>
         <Route path='/login' element={<Login setIsLoggedIn={setIsLoggedIn} />} />
         <Route path='/signup' element={<Signup />} />
-        <Route path='/' element={<Task />} />
+        <Route path='/task' element={<Task />} />
         <Route path='/product' element={<Product />} />
         <Route path='/product/:id' element={<ProductDetails />} />
         <Route path='/categories' element={<Categories />} />
         <Route path='/company' element={<Company />} />
+        <Route path='/*' element={<Login setIsLoggedIn={setIsLoggedIn} />} />
       </Routes>
     </div>
   );
